@@ -1,0 +1,64 @@
+{% extends "base.html.jinja" %}
+
+{% block content %}
+    
+<main class="container pt-5 w-100 d-flex justify-content-center">
+
+
+    <!-- <table id="opinions" class="table table-striped table-bordered text-wrap table-responsive">
+        <thead>
+            <tr>
+                <th>Identyfikator opinii</th>
+                <th>Autor</th>
+                <th>Rekomendacja</th>
+                <th>Liczba gwiazdek</th>
+                <th>Opinia potwierdzona zakupem</th>
+                <th>Data wystawienia opinii</th>
+                <th>Data zakupu produktu</th>
+                <th>Liczba polubień</th>
+                <th>Liczba nielubień</th>
+                <th>Treść opinii</th>
+                <th>Lista wad</th>
+                <th>Lista zalet</th>
+                <th>Dane</th>
+                <th>Wykresy</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table> -->
+    {{opinions|safe}}
+
+</main>
+
+{% endblock content %}
+   
+{% block scripts %}
+
+    <script>
+        $(document).ready(function () {
+            $('#opinions').DataTable({
+                responsive: true,
+                "scrollX": true,
+                "scrollY": "500px",
+                columnDefs: [
+                { targets: 1, title: "Identyfikator opinii" },
+                { targets: 2, title: "Autor" },
+                { targets: 3, title: "Rekomendacja" },
+                { targets: 4, title: "Liczba gwiazdek" },
+                { targets: 5, title: "Opinia potwierdzona zakupem" },
+                { targets: 6, title: "Data wystawienia opinii" },
+                { targets: 7, title: "Data zakupu produktu" },
+                { targets: 8, title: "Liczba polubień" },
+                { targets: 9, title: "Liczba nielubień" },
+                { targets: 10, title: "Treść opinii" },
+                { targets: 11, title: "Lista wad" },
+                { targets: 12, title: "Lista zalet" },
+                ]
+            });
+             
+        });
+    </script>
+
+{% endblock scripts %}
